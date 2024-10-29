@@ -1,5 +1,4 @@
 Flask
 ultralytics
 opencv-python
-flask-socketio     # For real-time video streaming
-eventlet           # For managing Flask-SocketIO on localhost
+
