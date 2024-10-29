@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Object Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./cs/styles.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>AI Object Detection Dashboard</h1>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="video-container">
+                <div style="position: relative;">
+                    <img src="/video_feed" class="video-feed" alt="Video Feed" id="video-feed">
+                    <div id="fps-meter">FPS: <span id="fps-value">0</span></div>
+                </div>
+                <div class="controls">
+                    <button class="button primary" id="start-btn">Start Detection</button>
+                    <button class="button danger" id="stop-btn">Stop Detection</button>
+                    <button class="button primary" id="snapshot-btn">Take Snapshot</button>
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <h2>Detection Statistics</h2>
+                <div class="stat-card">
+                    <div class="stat-title">Objects Detected</div>
+                    <div class="stat-value" id="objects-count">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Average Confidence</div>
+                    <div class="stat-value" id="avg-confidence">0%</div>
+                </div>
+                <div class="detection-list" id="detection-list">
+                    <!-- Detection items will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='./js/main.js') }}"></script>
+</body>
+
+</html>
